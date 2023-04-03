@@ -20,6 +20,11 @@ namespace RepositoryPatternWithUOW.api.Controllers
         {
             return Ok(_authorRepository.GetById(1));
         }
+        [HttpGet("GetByIdAsync")]
+        public async Task<IActionResult> GetByIdAsync()
+        {
+            return Ok(await _authorRepository.GetByIdAsync(1));
+        }
 
     }
 }
